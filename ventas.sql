@@ -20,7 +20,7 @@ CREATE TABLE productos(
     descripcion VARCHAR(100) NOT NULL,
     precio DOUBLE(11,2) NOT NULL,
     stock INT(4) NOT NULL,
-    PRIMARY KEY(cod_pro)
+    PRIMARY KEY(cod_prod)
 );
 CREATE TABLE facturas(
     nro_fact INT(10) NOT NULL AUTO_INCREMENT,
@@ -32,6 +32,7 @@ CREATE TABLE facturas(
     nro_prod INT(6) NOT NULL,
     PRIMARY KEY(nro_fact),
     FOREIGN KEY(nro_cli) REFERENCES clientes(cod_cli),
+<<<<<<< HEAD
     FOREIGN KEY(nro_prod) REFERENCES productos(cod_pro)
 );
 
@@ -157,3 +158,7 @@ ALTER TABLE usuarios DROP COLUMN fecha_nacimiento
 | telefono  | int(10)     | YES  |     | NULL    |       |
 +-----------+-------------+------+-----+---------+-------+
 5 rows in set (0.019 sec)
+=======
+    FOREIGN KEY(nro_prod) REFERENCES productos(cod_prod)
+);
+>>>>>>> 526982b5e7d7c9f58ec3cb03d2e433ae5e53493d
