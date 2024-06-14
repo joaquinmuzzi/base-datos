@@ -21,7 +21,7 @@ CREATE TABLE productos(
     descripcion VARCHAR(100) NOT NULL,
     precio DOUBLE(11,2) NOT NULL,
     stock INT(4) NOT NULL,
-    PRIMARY KEY(cod_pro)
+    PRIMARY KEY(cod_prod)
 );
 CREATE TABLE facturas(
     nro_fact INT(10) NOT NULL AUTO_INCREMENT,
