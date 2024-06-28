@@ -170,6 +170,11 @@ ALTER TABLE usuarios DROP COLUMN fecha_nacimiento
 
     ADM:    Alta, Baja y Modificación
 
-    INSERT table cliente (cod_cli, nombre, apellido, domicilio, telefono) VALUES ('', 'Jose', 'Pérez', 'Lope de Vega 2015', '1555111111');
+    INSERT INTO clientes (cod_cli, nombre, apellido, domicilio, telefono) VALUES ('53', 'Jose', 'Pérez', 'Lope de Vega 2015', '1555111111');
+    INSERT INTO clientes VALUES ('53', 'Jose', 'Pérez', 'Lope de Vega 2015', '1555111111');
+    VALUES
+
+    SELECT * FROM productos WHERE descripcion LIKE 'A%'; busca todas las cadenas de caracterez que empiezan con a
+    SELECT * FROM productos WHERE precio BETWEEN 30000 AND 100000;
 */
 
