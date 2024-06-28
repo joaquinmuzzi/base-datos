@@ -1,5 +1,7 @@
 /*
-    CREATE database: crea una bas de datos
+    SENTENCIAS DDL:
+
+    CREATE database: crea una base de datos
     USE database: activar la base de datos desde la shell
     DROP database name: borrar una base de datos desde la shell
     conectarse al servidor desde la shell: mysql -u root -p "password"
@@ -32,8 +34,7 @@ CREATE TABLE facturas(
     nro_prod INT(6) NOT NULL,
     PRIMARY KEY(nro_fact),
     FOREIGN KEY(nro_cli) REFERENCES clientes(cod_cli),
-<<<<<<< HEAD
-    FOREIGN KEY(nro_prod) REFERENCES productos(cod_pro)
+    FOREIGN KEY(nro_prod) REFERENCES productos(cod_prod)
 );
 
 MariaDB [ventas]> SHOW TABLES;
@@ -158,7 +159,17 @@ ALTER TABLE usuarios DROP COLUMN fecha_nacimiento
 | telefono  | int(10)     | YES  |     | NULL    |       |
 +-----------+-------------+------+-----+---------+-------+
 5 rows in set (0.019 sec)
-=======
-    FOREIGN KEY(nro_prod) REFERENCES productos(cod_prod)
-);
->>>>>>> 526982b5e7d7c9f58ec3cb03d2e433ae5e53493d
+
+/* 
+    SENTENCIAS DML:
+
+    INSERT: alta
+    SELECT: consulta
+    UPDATE: modificar
+    DELETE: borrar
+
+    ADM:    Alta, Baja y Modificación
+
+    INSERT table cliente (cod_cli, nombre, apellido, domicilio, telefono) VALUES ('', 'Jose', 'Pérez', 'Lope de Vega 2015', '1555111111');
+*/
+
