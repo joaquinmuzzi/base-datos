@@ -1,3 +1,4 @@
+/*PUNTO 1*/
 INSERT INTO epocas (Nombre_Epoca, genero_Musi, Perdiodo, DifCaractRelevantes)
 VALUES
     ('Renacimiento', 'Música Clásica', '1500-01-01', 'Uso del contrapunto y la polifonía'),
@@ -11,6 +12,19 @@ VALUES
     ('Electrónica', 'Electronic', '1990-01-01', 'Producción digital, uso de sintetizadores y samplers'),
     ('Pop', 'Pop', '1960-01-01', 'Melodías pegajosas, estructura simple de canciones');
 
+INSERT INTO generos (Nombre_Genero, Nom_E, Instrumento, origenes, MusicosAsoc, DivCarac)
+VALUES
+    ('Rock', 'Renacimiento', 'Guitarra', 'Blues, Country', 'The Beatles, Led Zeppelin', 'Guitarra eléctrica, batería'),
+    ('Jazz', 'Barroco', 'Piano', 'Blues, Ragtime', 'Miles Davis, John Coltrane', 'Improvisación, síncopa'),
+    ('Clásica', 'Clásico', 'Violín', 'Música medieval', 'Beethoven, Mozart', 'Orquestación compleja'),
+    ('Hip-Hop', 'Romántico', 'Turntable', 'Funk, Disco', 'Tupac, Notorious B.I.G.', 'Rap, sampling'),
+    ('Reggae', 'Impresionismo', 'Guitarra', 'Ska, Rocksteady', 'Bob Marley, Peter Tosh', 'Ritmos sincopados'),
+    ('Electronic', 'Jazz', 'Sintetizador', 'Disco, Synthpop', 'Daft Punk, Kraftwerk', 'Beats electrónicos'),
+    ('Blues', 'Rock', 'Guitarra', 'Cantos de trabajo', 'B.B. King, Muddy Waters', 'Estructura de 12 compases'),
+    ('Pop', 'Hip-Hop', 'Voz', 'Rock & Roll', 'Michael Jackson, Madonna', 'Melodías pegadizas'),
+    ('Funk', 'Electrónica', 'Bajo', 'Soul, R&B', 'James Brown, Sly and the Family Stone', 'Ritmos fuertes y sincopados'),
+    ('Country', 'Pop', 'Guitarra', 'Música folk', 'Johnny Cash, Dolly Parton', 'Narrativa en letras');
+
 INSERT INTO Instrumentos (Nombre_Instr, creador, Materiales, foto, TipoInstrumento, lugarCreacion)
 VALUES
     ('Guitarra Eléctrica', 'Adolph Rickenbacker', 'Madera, metal, plástico', 'guitarra_electrica.jpg', 'Cuerda', 'Estados Unidos'),
@@ -23,20 +37,7 @@ VALUES
     ('Sintetizador', 'Robert Moog', 'Plástico, metal', 'sintetizador.jpg', 'Electrónico', 'Estados Unidos'),
     ('Contrabajo', 'Gasparo da Salò', 'Madera, tripa, ébano', 'contrabajo.jpg', 'Cuerda frotada', 'Italia'),
     ('Arpa', 'Desconocido', 'Madera, tripa', 'arpa.jpg', 'Cuerda pulsada', 'Antiguo Egipto');
-
-INSERT INTO Instrumentos (Nombre_Instr, creador, Materiales, foto, TipoInstrumento, lugarCreacion)
-VALUES
-    ('Guitarra Electrica', 'Adolph Rickenbacker', 'Madera, metal, plastico', 'guitarra_electrica.jpg', 'Cuerda', 'Estados Unidos'),
-    ('Piano', 'Bartolomeo Cristofori', 'Madera, marfil, hierro', 'piano.jpg', 'Cuerda percusiva', 'Italia'),
-    ('Saxofon', 'Adolphe Sax', 'Laton', 'saxofon.jpg', 'Viento-madera', 'Belgica'),
-    ('Violin', 'Antonio Stradivari', 'Madera, tripa, ebano', 'violin.jpg', 'Cuerda frotada', 'Italia'),
-    ('Flauta', 'Theobald Boehm', 'Metal, madera', 'flauta.jpg', 'Viento-madera', 'Alemania'),
-    ('Bateria', 'Desconocido', 'Madera, metal, plastico', 'bateria.jpg', 'Percusion', 'Global'),
-    ('Trompeta', 'Desconocido', 'Laton', 'trompeta.jpg', 'Viento-metal', 'Antiguo Egipto'),
-    ('Sintetizador', 'Robert Moog', 'Plastico, metal', 'sintetizador.jpg', 'Electronico', 'Estados Unidos'),
-    ('Contrabajo', 'Gasparo da Salo', 'Madera, tripa, ebano', 'contrabajo.jpg', 'Cuerda frotada', 'Italia'),
-    ('Arpa', 'Desconocido', 'Madera, tripa', 'arpa.jpg', 'Cuerda pulsada', 'Antiguo Egipto');
-
+    
 INSERT INTO Genero_Instrumentos (Nom_I, Rol_instru_gen, AnioIntro_Instru_gen, NivelDificultad, Popularidad)
 VALUES
     ('Guitarra Electrica', 'Principal', '1950-01-01', 'Media', 'Alta'),
@@ -76,4 +77,4 @@ VALUES
     ('No Woman, No Cry', 'Bob Marley', '1974-01-01', 'no_woman_no_cry.pdf'),
     ('California Love', 'Tupac Shakur', '1995-01-01', 'california_love.pdf');
 
-SELECT 
+

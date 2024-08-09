@@ -33,7 +33,7 @@ CREATE TABLE epocas(
 | Field        | Type         | Null | Key | Default | Extra |
 +--------------+--------------+------+-----+---------+-------+
 | Nombre_Genero| varchar(100) | NO   | PRI | NULL    |       |
-| NomUnico_E   | varchar(100) | NO   | MUL | NULL    |       |
+| Nom_E        | varchar(100) | NO   | MUL | NULL    |       |
 | Instrumento  | varchar(15)  | NO   |     | NULL    |       |
 | origenes     | varchar(70)  | NO   |     | NULL    |       |
 | MusicosAsoc  | varchar(70)  | NO   |     | NULL    |       |

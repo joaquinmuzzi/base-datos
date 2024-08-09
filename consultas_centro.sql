@@ -1,0 +1,2 @@
+/*Listar los géneros con todos sus datos mostrando a qué época pertenece y al periodo de inicio y los músicos que pertenecen a ese género de los músicos mostrar su nombre y fecha de nacimiento.*/
+SELECT G.Nombre_Genero, G.Nom_E, G.Instrumento, G.origenes, G.MusicosAsoc, G.DivCarac, E.Nombre_Epoca, E.Perdiodo FROM generos G, epocas E WHERE G.Nom_E = E.Nombre_Epoca;
