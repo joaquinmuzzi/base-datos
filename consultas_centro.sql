@@ -128,5 +128,5 @@ MariaDB [centrocultural]> SELECT G.MusicosAsoc, M.Nombre_musicos, M.fecha_N FROM
 +---------------------------------------+-------------------------+------------+
 
 /* Mencionar las obras famosas, el nombre y el año de creación y el género a que pertenecen y el nombre del músico.*/
-SELECT OF.Nombre_ObrasFam, OF.anioCreacion FROM ObrasFamosas OF WHERE G.Nombre_Genero = ;
+SELECT OF.Nombre_ObrasFam, OF.anioCreacion, GOF.Nombre_GOF, GOF.Artista FROM ObrasFamosas OF, Genero_ObrasFamosas GOF WHERE OF.Nombre_ObrasFam = GOF.Nombre_GOF;
 

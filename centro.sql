@@ -105,7 +105,8 @@ CREATE TABLE ObrasFamosas(
         musicos_Autores VARCHAR (100) NOT NULL,
         AnioCreacion DATE  NOT NULL,
         Partitura VARCHAR (100) NOT NULL,
-        PRIMARY KEY (Nombre_ObrasFam)
+        PRIMARY KEY (Nombre_ObrasFam),
+        
     );
 
 
@@ -119,14 +120,14 @@ CREATE TABLE ObrasFamosas(
 +-----------------+--------------+------+-----+---------+-------+
 
 
-CREATE TABLE Genero_ObrasFamosas(
+CREATE TABLE genero_ObrasFamosas(
         Nombre_GOF VARCHAR (75) NOT NULL,
         NomUnico_Of VARCHAR (75) NOT NULL,
         NomUnico_G VARCHAR (75) NOT NULL,
         Artista VARCHAR (75) NOT NULL,
         Productor VARCHAR (75) NOT NULL,
         FOREIGN KEY (NomUnico_Of) REFERENCES ObrasFamosas (Nombre_ObrasFam),
-        FOREIGN KEY (NomUnico_G) REFERENCES Generos (Nombre_Genero)
+        FOREIGN KEY (NomUnico_G) REFERENCES generos (Nombre_Genero)
     );
 
 
