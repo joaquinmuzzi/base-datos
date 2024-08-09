@@ -77,16 +77,15 @@ VALUES
     ('No Woman, No Cry', 'Bob Marley', '1974-01-01', 'no_woman_no_cry.pdf'),
     ('California Love', 'Tupac Shakur', '1995-01-01', 'california_love.pdf');
 
-INSERT INTO ObrasFamosas (Nombre_ObrasFam, musicos_Autores, AnioCreacion, Partitura)
+INSERT INTO Genero_ObrasFamosas (Nombre_GOF, NomUnico_Of, NomUnico_G, Artista, Productor)
 VALUES
-    ('Sinfonía No. 5', 'Ludwig van Beethoven', '1808-01-01', 'sinfonia_no_5.pdf'),
-    ('Tocata y fuga en re menor', 'Johann Sebastian Bach', '1707-01-01', 'tocata_y_fuga.pdf'),
-    ('Eine kleine Nachtmusik', 'Wolfgang Amadeus Mozart', '1787-01-01', 'eine_kleine_nachtmusik.pdf'),
-    ('Nocturno Op. 9 No. 2', 'Frederic Chopin', '1832-01-01', 'nocturno_op9_no2.pdf'),
-    ('So What', 'Miles Davis', '1959-01-01', 'so_what.pdf'),
-    ('A Love Supreme', 'John Coltrane', '1964-01-01', 'a_love_supreme.pdf'),
-    ('Purple Haze', 'Jimi Hendrix', '1967-01-01', 'purple_haze.pdf'),
-    ('Jailhouse Rock', 'Elvis Presley', '1957-01-01', 'jailhouse_rock.pdf'),
-    ('No Woman, No Cry', 'Bob Marley', '1974-01-01', 'no_woman_no_cry.pdf'),
-    ('California Love', 'Tupac Shakur', '1995-01-01', 'california_love.pdf');
-
+    ('Sinfonia No. 5 en Do Menor', 'Sinfonia No. 5', 'Música Clásica', 'Ludwig van Beethoven', 'Deutsche Grammophon'),
+    ('Tocata y Fuga en Re Menor', 'Tocata y fuga en re menor', 'Música Clásica', 'Johann Sebastian Bach', 'Archiv Produktion'),
+    ('Eine Kleine Nachtmusik', 'Eine kleine Nachtmusik', 'Música Clásica', 'Wolfgang Amadeus Mozart', 'Deutsche Grammophon'),
+    ('Nocturno Op. 9 No. 2', 'Nocturno Op. 9 No. 2', 'Música Clásica', 'Frederic Chopin', 'Polish National Recordings'),
+    ('So What', 'So What', 'Jazz', 'Miles Davis', 'Columbia Records'),
+    ('A Love Supreme', 'A Love Supreme', 'Jazz', 'John Coltrane', 'Impulse!'),
+    ('Purple Haze', 'Purple Haze', 'Rock', 'Jimi Hendrix', 'Reprise Records'),
+    ('Jailhouse Rock', 'Jailhouse Rock', 'Rock and Roll', 'Elvis Presley', 'RCA Victor'),
+    ('No Woman, No Cry', 'No Woman, No Cry', 'Reggae', 'Bob Marley', 'Island Records'),
+    ('California Love', 'California Love', 'Hip-Hop', 'Tupac Shakur', 'Interscope Records');
