@@ -130,3 +130,48 @@ MariaDB [centrocultural]> SELECT G.MusicosAsoc, M.Nombre_musicos, M.fecha_N FROM
 /* Mencionar las obras famosas, el nombre y el año de creación y el género a que pertenecen y el nombre del músico.*/
 SELECT OF.Nombre_ObrasFam, OF.anioCreacion, GOF.Nombre_GOF, GOF.Artista FROM ObrasFamosas OF, Genero_ObrasFamosas GOF WHERE OF.Nombre_ObrasFam = GOF.Nombre_GOF;
 
++---------------------------+--------------+---------------------------+-------------------------+
+| Nombre_ObrasFam           | anioCreacion | Nombre_GOF                | Artista                 |
++---------------------------+--------------+---------------------------+-------------------------+
+| Tocata y fuga en re menor | 1707-01-01   | Tocata y Fuga en Re Menor | Johann Sebastian Bach   |
+| Eine kleine Nachtmusik    | 1787-01-01   | Eine Kleine Nachtmusik    | Wolfgang Amadeus Mozart |
+| Nocturno Op. 9 No. 2      | 1832-01-01   | Nocturno Op. 9 No. 2      | Frederic Chopin         |
+| So What                   | 1959-01-01   | So What                   | Miles Davis             |
+| A Love Supreme            | 1964-01-01   | A Love Supreme            | John Coltrane           |
+| Purple Haze               | 1967-01-01   | Purple Haze               | Jimi Hendrix            |
+| Jailhouse Rock            | 1957-01-01   | Jailhouse Rock            | Elvis Presley           |
+| No Woman, No Cry          | 1974-01-01   | No Woman, No Cry          | Bob Marley              |
+| California Love           | 1995-01-01   | California Love           | Tupac Shakur            |
++---------------------------+--------------+---------------------------+-------------------------+
+
+SELECT OF.Nombre_ObrasFam, OF.anioCreacion, GOF.Nombre_GOF, GOF.Artista FROM ObrasFamosas OF, Genero_ObrasFamosas GOF WHERE OF.Nombre_ObrasFam = GOF.Nombre_GOF;
+
+/* 3- Mencionar todos los instrumentos y a que género pertenecen . */
+SELECT GI.Nom_I, I.Materiales FROM Genero_Instrumentos GI, Instrumentos I WHERE GI.Nom_I = I.Nombre_Instr;
+
++--------------------+-------------------------+
+| Nom_I              | Materiales              |
++--------------------+-------------------------+
+| Arpa               | Madera, tripa           |
+| Bater?a            | Madera, metal, pl?stico |
+| Contrabajo         | Madera, tripa, ?bano    |
+| Flauta             | Metal, madera           |
+| Guitarra El?ctrica | Madera, metal, pl?stico |
+| Piano              | Madera, marfil, hierro  |
+| Saxof?n            | Lat?n                   |
+| Sintetizador       | Pl?stico, metal         |
+| Trompeta           | Lat?n                   |
+| Viol?n             | Madera, tripa, ?bano    |
++--------------------+-------------------------+
+
+/* 4- Mencionar todos los músicos cuyos nombres terminan en n.  */
+Select Nombre_musicos FROM musicos WHERE Nombre_musicos LIKE '%n';
+MariaDB [CentroCultural]> Select Nombre_musicos FROM musicos WHERE Nombre_musicos LIKE '%n';
++----------------------+
+| Nombre_musicos       |
++----------------------+
+| Frederic Chopin      |
+| Ludwig van Beethoven |
++----------------------+
+
+/* 5- Listar todos las obras famosas cuyos años de creación estén comprendidos entre 1950 y 1970. */
