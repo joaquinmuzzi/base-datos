@@ -79,13 +79,13 @@ VALUES
 
 INSERT INTO Genero_ObrasFamosas (Nombre_GOF, NomUnico_Of, NomUnico_G, Artista, Productor)
 VALUES
-    ('Sinfonia No. 5 en Do Menor', 'Sinfonia No. 5', 'Rock', 'Ludwig van Beethoven', 'Deutsche Grammophon'),
-    ('Tocata y Fuga en Re Menor', 'Sinfonia No. 5', 'Rock', 'Johann Sebastian Bach', 'Archiv Produktion'),
-    ('Eine Kleine Nachtmusik', 'Sinfonia No. 5', 'Rock', 'Wolfgang Amadeus Mozart', 'Deutsche Grammophon'),
-    ('Nocturno Op. 9 No. 2', 'Sinfonia No. 5', 'Rock', 'Frederic Chopin', 'Polish National Recordings'),
-    ('So What', 'So What', 'Sinfonia No. 5', 'Rock', 'Columbia Records'),
-    ('A Love Supreme', 'Sinfonia No. 5', 'Rock', 'John Coltrane', 'Impulse!'),
-    ('Purple Haze', 'Sinfonia No. 5', 'Rock', 'Jimi Hendrix', 'Reprise Records'),
-    ('Jailhouse Rock', 'Sinfonia No. 5', 'Rock', 'Elvis Presley', 'RCA Victor'),
-    ('No Woman, No Cry', 'Sinfonia No. 5', 'Rock', 'Bob Marley', 'Island Records'),
-    ('California Love', 'Sinfonia No. 5', 'Rock', 'Tupac Shakur', 'Interscope Records');
+    ('Sinfonia No. 5 en Do Menor', 'Sinfonia No. 5', 'Clásica', 'Ludwig van Beethoven', 'Deutsche Grammophon'),
+    ('Tocata y Fuga en Re Menor', 'Tocata y Fuga en Re Menor', 'Clásica', 'Johann Sebastian Bach', 'Archiv Produktion'),
+    ('Eine Kleine Nachtmusik', 'Eine Kleine Nachtmusik', 'Clásica', 'Wolfgang Amadeus Mozart', 'Deutsche Grammophon'),
+    ('Nocturno Op. 9 No. 2', 'Nocturno Op. 9 No. 2', 'Clásica', 'Frederic Chopin', 'Polish National Recordings'),
+    ('So What', 'So What', 'Jazz', 'Miles Davis', 'Columbia Records'),
+    ('A Love Supreme', 'A Love Supreme', 'Jazz', 'John Coltrane', 'Impulse!'),
+    ('Purple Haze', 'Purple Haze', 'Rock', 'Jimi Hendrix', 'Reprise Records'),
+    ('Jailhouse Rock', 'Jailhouse Rock', 'Rock', 'Elvis Presley', 'RCA Victor'),
+    ('No Woman, No Cry', 'No Woman, No Cry', 'Reggae', 'Bob Marley', 'Island Records'),
+    ('California Love', 'California Love', 'Hip-Hop', 'Tupac Shakur', 'Interscope Records');
