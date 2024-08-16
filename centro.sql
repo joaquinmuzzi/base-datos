@@ -105,7 +105,7 @@ CREATE TABLE ObrasFamosas(
         musicos_Autores VARCHAR (100) NOT NULL,
         AnioCreacion DATE  NOT NULL,
         Partitura VARCHAR (100) NOT NULL,
-        PRIMARY KEY (Nombre_ObrasFam),
+        PRIMARY KEY (Nombre_ObrasFam)
         
     );
 

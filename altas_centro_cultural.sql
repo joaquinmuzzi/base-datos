@@ -40,12 +40,12 @@ VALUES
     
 INSERT INTO Genero_Instrumentos (Nom_I, Rol_instru_gen, AnioIntro_Instru_gen, NivelDificultad, Popularidad)
 VALUES
-    ('Guitarra Electrica', 'Principal', '1950-01-01', 'Media', 'Alta'),
+    ('Guitarra Eléctrica', 'Principal', '1950-01-01', 'Media', 'Alta'),
     ('Piano', 'Principal', '1700-01-01', 'Alta', 'Alta'),
-    ('Saxofon', 'Secundario', '1840-01-01', 'Media', 'Media'),
-    ('Violin', 'Principal', '1500-01-01', 'Alta', 'Alta'),
+    ('Saxofón', 'Secundario', '1840-01-01', 'Media', 'Media'),
+    ('Violín', 'Principal', '1500-01-01', 'Alta', 'Alta'),
     ('Flauta', 'Secundario', '1800-01-01', 'Media', 'Media'),
-    ('Bateria', 'Principal', '1930-01-01', 'Media', 'Alta'),
+    ('Batería', 'Principal', '1930-01-01', 'Media', 'Alta'),
     ('Trompeta', 'Secundario', '1500-01-01', 'Alta', 'Media'),
     ('Sintetizador', 'Principal', '1960-01-01', 'Media', 'Alta'),
     ('Contrabajo', 'Secundario', '1500-01-01', 'Alta', 'Media'),
