@@ -165,7 +165,7 @@ SELECT GI.Nom_I, I.Materiales FROM Genero_Instrumentos GI, Instrumentos I WHERE 
 +--------------------+-------------------------+
 
 /* 4- Mencionar todos los músicos cuyos nombres terminan en n.  */
-Select Nombre_musicos FROM musicos WHERE Nombre_musicos LIKE '%n';
+SELECT Nombre_musicos FROM musicos WHERE Nombre_musicos LIKE '%n';
 MariaDB [CentroCultural]> Select Nombre_musicos FROM musicos WHERE Nombre_musicos LIKE '%n';
 +----------------------+
 | Nombre_musicos       |
@@ -175,3 +175,88 @@ MariaDB [CentroCultural]> Select Nombre_musicos FROM musicos WHERE Nombre_musico
 +----------------------+
 
 /* 5- Listar todos las obras famosas cuyos años de creación estén comprendidos entre 1950 y 1970. */
+SELECT Nombre_ObrasFam, anioCreacion FROM ObrasFamosas WHERE YEAR(anioCreacion) BETWEEN 1950 AND 1970;
++-----------------+--------------+
+| Nombre_ObrasFam | anioCreacion |
++-----------------+--------------+
+| A Love Supreme  | 1964-01-01   |
+| Jailhouse Rock  | 1957-01-01   |
+| Purple Haze     | 1967-01-01   |
+| So What         | 1959-01-01   |
++-----------------+--------------+
+
+/* 6- Listar el nombre de los músicos y su historia de vida ordenándolos del más chico al más grande. */
+SELECT Nombre_musicos, fecha_N FROM Musicos ORDER BY fecha_N DESC;
++-------------------------+------------+
+| Nombre_musicos          | fecha_N    |
++-------------------------+------------+
+| Tupac Shakur            | 1971-06-16 |
+| Bob Marley              | 1945-02-06 |
+| Jimi Hendrix            | 1942-11-27 |
+| Elvis Presley           | 1935-01-08 |
+| John Coltrane           | 1926-09-23 |
+| Miles Davis             | 1926-05-26 |
+| Frederic Chopin         | 1810-03-01 |
+| Ludwig van Beethoven    | 1770-12-17 |
+| Wolfgang Amadeus Mozart | 1756-01-27 |
+| Johann Sebastian Bach   | 1685-03-31 |
++-------------------------+------------+
+
+/* 7- Listar el nombre de los músicos y su historia de vida ordenándolos del mayor al menor. */
+SELECT Nombre_musicos, fecha_N FROM Musicos ORDER BY fecha_N ASC;
++-------------------------+------------+
+| Nombre_musicos          | fecha_N    |
++-------------------------+------------+
+| Johann Sebastian Bach   | 1685-03-31 |
+| Wolfgang Amadeus Mozart | 1756-01-27 |
+| Ludwig van Beethoven    | 1770-12-17 |
+| Frederic Chopin         | 1810-03-01 |
+| Miles Davis             | 1926-05-26 |
+| John Coltrane           | 1926-09-23 |
+| Elvis Presley           | 1935-01-08 |
+| Jimi Hendrix            | 1942-11-27 |
+| Bob Marley              | 1945-02-06 |
+| Tupac Shakur            | 1971-06-16 |
++-------------------------+------------+
+
+/* 8- Listar aquellos instrumentos, el nombre y el tipo cuyo material sea de madera y la cantidad cuyo material sea de madera. */
+SELECT Nombre_Instr, TipoInstrumento FROM Instrumento WHERE Materiales LIKE '%madera%';
++--------------------+------------------+
+| Nombre_Instr       | TipoInstrumento  |
++--------------------+------------------+
+| Flauta             | Viento-madera    |
++--------------------+------------------+
+
+/* 9- Mostrar todos los géneros que existen agrupándolos por época. */
+SELECT Nombre_Genero, Nom_E FROM generos ORDER BY Nom_E, Nombre_Genero;
++---------------+---------------+
+| Nombre_Genero | Nom_E         |
++---------------+---------------+
+| Jazz          | Barroco       |
+| Cl?sica       | Cl?sico       |
+| Funk          | Electr?nica   |
+| Pop           | Hip-Hop       |
+| Reggae        | Impresionismo |
+| Electronic    | Jazz          |
+| Country       | Pop           |
+| Rock          | Renacimiento  |
+| Blues         | Rock          |
+| Hip-Hop       | Rom?ntico     |
++---------------+---------------+
+
+/* 10- Listar todos los géneros cuyo origen sea distinto de nulo */
+SELECT Nombre_Genero, origenes FROM generos WHERE origenes IS NOT NULL;
++---------------+-------------------+
+| Nombre_Genero | origenes          |
++---------------+-------------------+
+| Blues         | Cantos de trabajo |
+| Cl?sica       | M?sica medieval   |
+| Country       | M?sica folk       |
+| Electronic    | Disco, Synthpop   |
+| Funk          | Soul, R&B         |
+| Hip-Hop       | Funk, Disco       |
+| Jazz          | Blues, Ragtime    |
+| Pop           | Rock & Roll       |
+| Reggae        | Ska, Rocksteady   |
+| Rock          | Blues, Country    |
++---------------+-------------------+
