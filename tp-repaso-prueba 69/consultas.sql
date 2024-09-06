@@ -11,6 +11,8 @@
 | Netbook            |
 | Disco duro         |
 | Monitor            |
+| Mousepad           |
+| cable              |
 +--------------------+
 
 2) SELECT a.nombre AS 'Nombre', a.precio AS 'Precio' FROM articulos a;
@@ -26,26 +28,30 @@
 | Netbook     |    56785.00 |
 | Disco duro  | 99999999.99 |
 | Monitor     |     2345.00 |
+| Mousepad    |     1000.00 |
+| cable       |     1500.00 |
 +-------------+-------------+
 
-3) SELECT a.precio FROM articulos a WHERE a.precio < 200000;
-+----------+
-| precio   |
-+----------+
-| 29000.00 |
-| 38000.00 |
-| 67777.00 |
-| 56785.00 |
-|  2345.00 |
-+----------+
+3) SELECT a.nombre, a.precio FROM articulos a WHERE a.precio < 200000;
++-------------+----------+
+| nombre      | precio   |
++-------------+----------+
+| Computadora | 29000.00 |
+| Teclado     | 38000.00 |
+| Auriculares | 67777.00 |
+| Netbook     | 56785.00 |
+| Monitor     |  2345.00 |
+| Mousepad    |  1000.00 |
+| cable       |  1500.00 |
++-------------+----------+
 
-4) SELECT a.precio FROM articulos a WHERE a.precio BETWEEN 60000 AND 1200000;
-+-----------+
-| precio    |
-+-----------+
-|  67777.00 |
-| 567865.00 |
-+-----------+
+4) SELECT a.nombre, a.precio FROM articulos a WHERE a.precio BETWEEN 60000 AND 1200000;
++-------------+-----------+
+| nombre      | precio    |
++-------------+-----------+
+| Auriculares |  67777.00 |
+| Notebook    | 567865.00 |
++-------------+-----------+
 
 5) SELECT (a.precio / 1400) AS 'Precio en dolares', a.nombre AS 'Nombre' FROM articulos a;
 +-------------------+-------------+
@@ -60,13 +66,15 @@
 |         40.560714 | Netbook     |
 |      71428.571421 | Disco duro  |
 |          1.675000 | Monitor     |
+|          0.714286 | Mousepad    |
+|          1.071429 | cable       |
 +-------------------+-------------+
 
 6) SELECT AVG(articulos.precio) AS Promedio FROM articulos;
 +-----------------+
 | Promedio        |
 +-----------------+
-| 22937815.442222 |
+| 18767530.816364 |
 +-----------------+
 
 7) SELECT AVG(articulos.precio) AS Promedio FROM articulos WHERE articulos.fabricante = 2;
@@ -100,32 +108,34 @@
 +--------------------+-------------+------------+----------------------+
 | nombre de articulo | precio      | fabricante | nombre de fabricante |
 +--------------------+-------------+------------+----------------------+
-| Computadora        |    29000.00 |          1 | Lenovo               |
-| Teclado            |    38000.00 |          2 | HP                   |
-| Auriculares        |    67777.00 |          3 | Apple                |
-| Mouse              | 99999999.99 |          4 | Acer                 |
-| Celular            |  5678567.00 |          5 | Toshiba              |
-| Notebook           |   567865.00 |          6 | Samsung              |
-| Netbook            |    56785.00 |          7 | DELL                 |
-| Disco duro         | 99999999.99 |          8 | EXO                  |
-| Monitor            |     2345.00 |          9 | MSI                  |
-| cable              |     1500.00 |          2 | HP                   |
+| Computadora        |    29000.00 |          1 | Asus                 |
+| Teclado            |    38000.00 |          2 | Lenovo               |
+| Auriculares        |    67777.00 |          3 | HP                   |
+| Mouse              | 99999999.99 |          4 | Apple                |
+| Celular            |  5678567.00 |          5 | Acer                 |
+| Notebook           |   567865.00 |          6 | Toshiba              |
+| Netbook            |    56785.00 |          7 | Samsung              |
+| Disco duro         | 99999999.99 |          8 | DELL                 |
+| Monitor            |     2345.00 |          9 | EXO                  |
+| Mousepad           |     1000.00 |         10 | MSI                  |
+| cable              |     1500.00 |          2 | Lenovo               |
 +--------------------+-------------+------------+----------------------+
 
 SELECT a.nombre AS 'nombre de articulo', a.precio, f.codigo AS fabricante, f.nombre AS 'nombre de fabricante' FROM articulos a INNER JOIN fabricantes f ON a.fabricante = f.codigo;
 +--------------------+-------------+------------+----------------------+
 | nombre de articulo | precio      | fabricante | nombre de fabricante |
 +--------------------+-------------+------------+----------------------+
-| Computadora        |    29000.00 |          1 | Lenovo               |
-| Teclado            |    38000.00 |          2 | HP                   |
-| Auriculares        |    67777.00 |          3 | Apple                |
-| Mouse              | 99999999.99 |          4 | Acer                 |
-| Celular            |  5678567.00 |          5 | Toshiba              |
-| Notebook           |   567865.00 |          6 | Samsung              |
-| Netbook            |    56785.00 |          7 | DELL                 |
-| Disco duro         | 99999999.99 |          8 | EXO                  |
-| Monitor            |     2345.00 |          9 | MSI                  |
-| cable              |     1500.00 |          2 | HP                   |
+| Computadora        |    29000.00 |          1 | Asus                 |
+| Teclado            |    38000.00 |          2 | Lenovo               |
+| Auriculares        |    67777.00 |          3 | HP                   |
+| Mouse              | 99999999.99 |          4 | Apple                |
+| Celular            |  5678567.00 |          5 | Acer                 |
+| Notebook           |   567865.00 |          6 | Toshiba              |
+| Netbook            |    56785.00 |          7 | Samsung              |
+| Disco duro         | 99999999.99 |          8 | DELL                 |
+| Monitor            |     2345.00 |          9 | EXO                  |
+| Mousepad           |     1000.00 |         10 | MSI                  |
+| cable              |     1500.00 |          2 | Lenovo               |
 +--------------------+-------------+------------+----------------------+
 
 11) SELECT a.nombre, a.precio, a.fabricante FROM articulos a;
@@ -141,6 +151,7 @@ SELECT a.nombre AS 'nombre de articulo', a.precio, f.codigo AS fabricante, f.nom
 | Netbook     |    56785.00 |          7 |
 | Disco duro  | 99999999.99 |          8 |
 | Monitor     |     2345.00 |          9 |
+| Mousepad    |     1000.00 |         10 |
 | cable       |     1500.00 |          2 |
 +-------------+-------------+------------+
 
@@ -148,16 +159,24 @@ SELECT a.nombre AS 'nombre de articulo', a.precio, f.codigo AS fabricante, f.nom
 +---------+-----------------+
 | nombre  | promedio        |
 +---------+-----------------+
-| Acer    | 99999999.990000 |
-| Apple   |    67777.000000 |
-| DELL    |    56785.000000 |
-| EXO     | 99999999.990000 |
-| HP      |    19750.000000 |
-| Lenovo  |    29000.000000 |
-| MSI     |     2345.000000 |
-| Samsung |   567865.000000 |
-| Toshiba |  5678567.000000 |
+| Acer    |  5678567.000000 |
+| Apple   | 99999999.990000 |
+| Asus    |    29000.000000 |
+| DELL    | 99999999.990000 |
+| EXO     |     2345.000000 |
+| HP      |    67777.000000 |
+| Lenovo  |    19750.000000 |
+| MSI     |     1000.000000 |
+| Samsung |    56785.000000 |
+| Toshiba |   567865.000000 |
 +---------+-----------------+
 
-13)
-SELECT f.nombre FROM articulos a, fabricantes f WHERE a.fabricante = f.codigo GROUP BY f.nombre HAVING AVG();
+13) SELECT f.nombre, AVG(a.precio) AS promedio FROM articulos a, fabricantes f WHERE a.fabricante = f.codigo GROUP BY f.nombre HAVING AVG(a.precio) > 150000;
++---------+-----------------+
+| nombre  | promedio        |
++---------+-----------------+
+| Acer    |  5678567.000000 |
+| Apple   | 99999999.990000 |
+| DELL    | 99999999.990000 |
+| Toshiba |   567865.000000 |
++---------+-----------------+

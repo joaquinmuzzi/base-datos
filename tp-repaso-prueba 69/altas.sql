@@ -1,4 +1,3 @@
-INSERT INTO fabricantes (nombre) VALUES( 'Asus' )
 INSERT INTO fabricantes (nombre) VALUES( 'Asus' );
 INSERT INTO fabricantes (nombre) VALUES( 'Lenovo' );
 INSERT INTO fabricantes (nombre) VALUES( 'HP' );
