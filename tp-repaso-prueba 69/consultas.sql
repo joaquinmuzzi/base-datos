@@ -180,3 +180,35 @@ SELECT a.nombre AS 'nombre de articulo', a.precio, f.codigo AS fabricante, f.nom
 | DELL    | 99999999.990000 |
 | Toshiba |   567865.000000 |
 +---------+-----------------+
+
+14) SELECT articulos.nombre, MIN(articulos.precio) AS precio FROM articulos;
++-------------+---------+
+| nombre      | precio  |
++-------------+---------+
+| Computadora | 1000.00 |
++-------------+---------+
+
+  SELECT nombre, precio FROM articulos WHERE precio = (SELECT min(precio) FROM articulos);
++----------+---------+
+| nombre   | precio  |
++----------+---------+
+| Mousepad | 1000.00 |
++----------+---------+
+
+15) INSERT INTO articulos (nombre, precio, fabricante) VALUES( 'Parlantes' , '70000.00', '2');
+Query OK, 1 row affected (0.003 sec)
+
+16) UPDATE articulos SET nombre = 'Impresora Laser' WHERE codigo = 8;
+Query OK, 1 row affected (0.005 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--17. Aplicar un descuento de 10 % a todos los productos cuyo precio sea mayor o igual a 200000$
+17) SELECT nombre, (precio * 0.9) AS 'Precio con descuento' FROM articulos WHERE precio >= 200000; 
++-----------------+----------------------+
+| nombre          | Precio con descuento |
++-----------------+----------------------+
+| Mouse           |          89999999.99 |
+| Celular         |           5110710.30 |
+| Notebook        |            511078.50 |
+| Impresora Laser |          89999999.99 |
++-----------------+----------------------+
