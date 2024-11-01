@@ -5,9 +5,9 @@ CREATE DATABASE TRANSPORTE_PUBLICO;
 USE TRANSPORTE_PUBLICO;
 
 CREATE TABLE pasajeros (
-    nro_sube INT (16) NOT NULL UNIQUE,
+    nro_sube BIGINT (16) NOT NULL UNIQUE,
     DNI INT (8) NOT NULL,
-    CUIL INT (11) NOT NULL UNIQUE,
+    CUIL BIGINT (11) NOT NULL UNIQUE,
     Nombre_titular_sube VARCHAR (30) NOT NULL,
     PRIMARY KEY (Nro_sube)
 );
@@ -61,7 +61,7 @@ CREATE TABLE choferes (
     nombre_choferes VARCHAR(50) NOT NULL,
     es_duenio BOOLEAN NOT NULL,
     horas_semanales INT(2) NOT NULL,
-    empresa_choferes VARCHAR(20) NOT NULL,
+    empresa_choferes VARCHAR(50) NOT NULL,
     num_interno INT(4) NOT NULL,
     PRIMARY KEY(dni_choferes),
     FOREIGN KEY(empresa_choferes) REFERENCES empresas(nombre_empresa),
@@ -88,7 +88,7 @@ CREATE TABLE boletos (
     subsidio DOUBLE (11,2) NULL,
     fecha DATE NULL,
     horario TIME  NULL,
-    sube INT(16) NOT NULL,
+    sube BIGINT(16) NOT NULL,
     linea INT (3) NOT NULL,
     PRIMARY KEY (nro_boleto),
     FOREIGN KEY (sube) REFERENCES pasajeros(nro_sube),
