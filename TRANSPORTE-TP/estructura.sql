@@ -58,6 +58,7 @@ CREATE TABLE internos (
 
 CREATE TABLE choferes (
     dni_choferes INT(8) NOT NULL,
+    CUIL_choferes BIGINT(11) NOT NULL UNIQUE,
     nombre_choferes VARCHAR(50) NOT NULL,
     es_duenio BOOLEAN NOT NULL,
     horas_semanales INT(2) NOT NULL,
