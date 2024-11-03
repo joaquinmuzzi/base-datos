@@ -4,7 +4,7 @@
 +--------------------+
 | Computadora        |
 | Teclado            |
-| Auriculares        |
+| Auriculares        | 
 | Mouse              |
 | Celular            |
 | Notebook           |
@@ -13,9 +13,10 @@
 | Monitor            |
 | Mousepad           |
 | cable              |
-+--------------------+
++--------------------+ 
+ 
+2) SELECT a.nombre AS 'Nombre', a.precio AS 'Precio' FROM articulos a;A
 
-2) SELECT a.nombre AS 'Nombre', a.precio AS 'Precio' FROM articulos a;
 +-------------+-------------+
 | Nombre      | Precio      |
 +-------------+-------------+
