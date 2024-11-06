@@ -181,9 +181,6 @@
 
   --Función Fecha
 
-pipe
-pipe estas en consultas
-
   1.Seleccionar el nombrey  la fecha de creacion de las empresas creadas en los ultimos 10 años
   SELECT nombre_empresa, fecha_creacion FROM empresas WHERE fecha_creacion >= DATE_SUB(CURDATE(), INTERVAL 10 YEAR);
 
@@ -304,11 +301,11 @@ HAVING r.sueldo_neto > 35000;
 | nombre_empleado  | sueldo_neto |
 +------------------+-------------+
 | Silvia Romero    |    35100.00 |
-| Carlos Garc├¡a   |    40500.00 |
-| Mar├¡a Lopez     |    36000.00 |
-| Pedro Fern├índez |    54000.00 |
-| Ana Mart├¡nez    |    45000.00 |
-| Ricardo D├¡az    |    37800.00 |
+| Carlos Garcia   |    40500.00 |
+| Maria Lopez     |    36000.00 |
+| Pedro Fernandez |    54000.00 |
+| Ana Martinez    |    45000.00 |
+| Ricardo Diaz    |    37800.00 |
 | Claudia Castro   |    99999.99 |
 +------------------+-------------+
 
@@ -360,41 +357,40 @@ ORDER BY horas_semanales ASC;
 +------------------+--------------+-----------------+
 | nombre_choferes  | DNI_choferes | horas_semanales |
 +------------------+--------------+-----------------+
-| Ana Mart├¡nez     |     38098765 |              20 |
-| Laura Gonz├ílez   |     54356789 |              25 |
+| Ana Martinez     |     38098765 |              20 |
+| Laura Gonzalez   |     54356789 |              25 |
 | Jorge Silva      |     87654321 |              28 |
-| Mar├¡a L├│pez      |     32067891 |              30 |
+| Maria Lopez      |     32067891 |              30 |
 | Silvia Romero    |     23456789 |              32 |
-| Carlos Garc├¡a    |     32023456 |              35 |
-| Ricardo D├¡az     |     67890123 |              38 |
-| Juan P├®rez       |     32012345 |              40 |
-| Pedro Fern├índez  |     38012378 |              45 |
+| Carlos Garcia    |     32023456 |              35 |
+| Ricardo Diaz     |     67890123 |              38 |
+| Juan Perez       |     32012345 |              40 |
+| Pedro Fernandez  |     38012378 |              45 |
 | Claudia Castro   |     98765432 |              50 |
 +------------------+--------------+-----------------+
 
 8. Mostrar el nombre del chofer, el numero de su recibo de sueldo y los detalles del recibo, brindando informacion sobre la empresa para la que trabaja el chofer y el area de finanzas que emitio el recibo
 
-SELECT c.nombre_choferes, r.nro_recibo, r.sueldo_bruto, r.descuento, r.sueldo_neto, e.nombre_empresa, 
-FRmbre_area, a.telefonoOM recibo_sueldo r 
-INNER JnoOIN choferes c ON r.DNI_choferes = c.dni_choferes
+SELECT c.nombre_choferes, r.fecha_emision, r.nro_recibo, r.sueldo_bruto, r.descuento, r.sueldo_neto, e.nombre_empresa, a.nombre_area, a.telefono FROM recibo_sueldo r 
+INNER JOIN choferes c ON r.DNI_choferes = c.dni_choferes
 INNER JOIN empresas e ON c.empresa_choferes = e.nombre_empresa
 INNER JOIN area_finanzas a ON r.nombre_area = a.nombre_area;
 
++------------------+---------------+------------+--------------+-----------+-------------+----------------------------------+------------------------+----------+
+| nombre_choferes  | fecha_emision | nro_recibo | sueldo_bruto | descuento | sueldo_neto | nombre_empresa                   | nombre_area            | telefono |
++------------------+---------------+------------+--------------+-----------+-------------+----------------------------------+------------------------+----------+
+| Carlos Garcia    | 2024-03-20    |   10000003 |     45000.00 |    450.00 |    40500.00 | Union Platense S.R.L.            | Impuestos              | 46123456 |
+| Ana Martinez     | 2024-04-25    |   10000004 |     50000.00 |    500.00 |    45000.00 | Empresa Nueve de Julio S.A.T.    | Auditoria              | 47567890 |
+| Ricardo Diaz     | 2024-07-20    |   10000007 |     42000.00 |    420.00 |    37800.00 | Transportes Unidos de Merlo S.A. | Facturacion            | 46123457 |
+| Silvia Romero    | 2024-08-25    |   10000008 |     39000.00 |    390.00 |    35100.00 | 13 de Noviembre S.A.             | Presupuesto            | 49678901 |
+| Juan Perez       | 2024-01-10    |   20000001 |     35000.00 |    350.00 |    31500.00 | Transporte La Union S.A.         | Contabilidad           | 45123456 |
+| Maria Lopez      | 2024-02-15    |   20000002 |     40000.00 |    400.00 |    36000.00 | Platabus S.A.                    | Tesoreria              | 45234567 |
+| Pedro Fernandez  | 2024-05-30    |   20000005 |     60000.00 |    600.00 |    54000.00 | Micro Omnibus Tigre S.A.         | Pagos y Obligaciones   | 43789012 |
+| Laura Gonzalez   | 2024-06-15    |   20000006 |     38000.00 |    380.00 |    34200.00 | Grupo de Transporte DOTA         | Cobranza y Recaudacion |     NULL |
+| Jorge Silva      | 2024-09-10    |   20000009 |     33000.00 |    330.00 |    29700.00 | Micro Omnibus Quilmes S.A.       | Proveedores            | 42345678 |
+| Claudia Castro   | 2024-10-15    |   20000010 |     31000.00 |    310.00 |    27900.00 | Rutatlantica S.A.                | Planeacion Financiera  |     NULL |
++------------------+---------------+------------+--------------+-----------+-------------+----------------------------------+------------------------+----------+
 
-+------------------+------------+--------------+-----------+-------------+----------------------------------+------------------------+----------+
-| nombre_choferes  | nro_recibo | sueldo_bruto | descuento | sueldo_neto | nombre_empresa                   | nombre_area            | telefono |
-+------------------+------------+--------------+-----------+-------------+----------------------------------+------------------------+----------+
-| Carlos Garc├¡a   |   10000003 |     45000.00 |    450.00 |    40500.00 | Union Platense S.R.L.            | Impuestos              | 46123456 |
-| Ana Mart├¡nez    |   10000004 |     50000.00 |    500.00 |    45000.00 | Empresa Nueve de Julio S.A.T.    | Auditoria              | 47567890 |
-| Ricardo D├¡az    |   10000007 |     42000.00 |    420.00 |    37800.00 | Transportes Unidos de Merlo S.A. | Facturacion            | 46123457 |
-| Silvia Romero    |   10000008 |     39000.00 |    390.00 |    35100.00 | 13 de Noviembre S.A.             | Presupuesto            | 49678901 |
-| Juan P├®rez      |   20000001 |     35000.00 |    350.00 |    31500.00 | Transporte La Union S.A.         | Contabilidad           | 45123456 |
-| Mar├¡a L├│pez    |   20000002 |     40000.00 |    400.00 |    36000.00 | Platabus S.A.                    | Tesoreria              | 45234567 |
-| Pedro Fern├índez |   20000005 |     60000.00 |    600.00 |    54000.00 | Micro Omnibus Tigre S.A.         | Pagos y Obligaciones   | 43789012 |
-| Laura Gonz├ílez  |   20000006 |     38000.00 |    380.00 |    34200.00 | Grupo de Transporte DOTA         | Cobranza y Recaudacion |     NULL |
-| Jorge Silva      |   20000009 |     33000.00 |    330.00 |    29700.00 | Micro Omnibus Quilmes S.A.       | Proveedores            | 42345678 |
-| Claudia Castro   |   20000010 |     31000.00 |    310.00 |    99999.99 | Rutatlantica S.A.                | Planeacion Financiera  |     NULL |
-+------------------+------------+--------------+-----------+-------------+----------------------------------+------------------------+----------+
 -- MUZZI --
 
 1. Contar la cantidad total de pasajeros registrados
@@ -484,3 +480,61 @@ INNER JOIN area_finanzas a ON r.nombre_area = a.nombre_area;
   | Jorge Gonzalez      |
   | Marta Sanchez       |
   +---------------------+
+
+  -- PIPE --
+
+-- UPDATE --
+
+1. Actualizar el numero de telefono del area financiera Contabilidad a: 49453125
+UPDATE area_finanzas SET telefono = 49453125 WHERE nombre_area = 'Contabilidad';
++------------------------+----------+
+| nombre_area            | telefono |
++------------------------+----------+
+| Auditoria              | 47567890 |
+| Cobranza y Recaudacion |     NULL |
+| Contabilidad           | 49453125 |
+| Facturacion            | 46123457 |
+| Impuestos              | 46123456 |
+| Pagos y Obligaciones   | 43789012 |
+| Planeacion Financiera  |     NULL |
+| Presupuesto            | 49678901 |
+| Proveedores            | 42345678 |
+| Tesoreria              | 45234567 |
++------------------------+----------+
+
+2. Actualiza el interno 2023. Ya no circula mas.
+UPDATE internos SET circula = FALSE WHERE num_interno = 2023 ;
++-------------+---------------+---------+----------+
+| num_interno | linea_interno | circula | id_infra |
++-------------+---------------+---------+----------+
+|        1123 |             4 |       1 |      109 |
+|        2023 |            45 |       0 |      101 |
+|        3154 |            89 |       0 |      102 |
+|        4287 |           146 |       1 |      103 |
+|        4538 |             1 |       1 |      110 |
+|        5342 |            92 |       1 |      104 |
+|        6420 |            54 |       0 |      105 |
+|        7511 |            13 |       1 |      106 |
+|        8904 |            57 |       1 |      107 |
+|        9056 |            11 |       0 |      108 |
++-------------+---------------+---------+----------+
+
+--DELETE 
+Eliminar los nombres de las areas financieras que empiecen con Pr.
+DELETE FROM area_finanzas WHERE nombre_area LIKE 'Pr%';
++------------------------+----------+
+| nombre_area            | telefono |
++------------------------+----------+
+| Auditoria              | 47567890 |
+| Cobranza y Recaudacion |     NULL |
+| Contabilidad           | 49453125 |
+| Facturacion            | 46123457 |
+| Impuestos              | 46123456 |
+| Pagos y Obligaciones   | 43789012 |
+| Tesoreria              | 45234567 |
++------------------------+----------+
+
+--ON CASCADE
+ --Los hago en casa -
+
+
