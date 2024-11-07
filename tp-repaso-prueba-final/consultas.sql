@@ -119,6 +119,51 @@ Sin utilizar ninguna de las funciones anteriores. */
 
 SELECT DISTINCT c.nombre_cliente, p.fecha_entrega FROM pedido p, cliente cWHERE p.codigo_cliente = c.codigo_cliente p.fecha_entrega >= '2008-01-01' AND p.fecha_entrega < '2009-01-01';
 
+/* 9. Devuelve un listado con el código de pedido, código de cliente, fecha esperada y fecha de entrega de los pedidos que no han sido entregados a tiempo. */
+SELECT p.codigo_pedido, c.codigo_cliente, p.fecha_esperada, p.fecha_entrega FROM pedido p JOIN cliente c ON c.codigo_cliente = p.codigo_pedido WHERE p.fecha_entrega > p.fecha_esperada;
+
++---------------+----------------+----------------+---------------+
+| codigo_pedido | codigo_cliente | fecha_esperada | fecha_entrega |
++---------------+----------------+----------------+---------------+
+|            16 |             16 | 2009-01-07     | 2009-01-15    |
+|            17 |             17 | 2009-01-09     | 2009-01-11    |
+|            13 |             13 | 2009-01-14     | 2009-01-15    |
+|             9 |              9 | 2008-12-27     | 2008-12-28    |
+|            22 |             22 | 2009-01-11     | 2009-01-13    |
+|            32 |             32 | 2007-01-19     | 2007-01-27    |
+|            18 |             18 | 2009-01-06     | 2009-01-07    |
+|            28 |             28 | 2009-02-17     | 2009-02-20    |
+|            31 |             31 | 2008-09-30     | 2008-10-04    |
+|            38 |             38 | 2009-03-06     | 2009-03-07    |
++---------------+----------------+----------------+---------------+
+/* 
+10. Devuelve un listado con el código de pedido, código de cliente, fecha esperada y fecha de
+entrega de los pedidos cuya fecha de entrega ha sido al menos dos días antes de la fecha
+esperada.
+ Utilizando la función ADDDATE
+ Utilizando la función DATEDIFF */
+
+SELECT p.codigo_pedido, c.codigo_cliente, p.fecha_esperada, p.fecha_entrega FROM pedido p JOIN cliente c ON p.codigo_pedido = c.codigo_cliente WHERE DATEDIFF(p.fecha_esperada, p.fecha_entrega) >= 2;
+
++---------------+----------------+----------------+---------------+
+| codigo_pedido | codigo_cliente | fecha_esperada | fecha_entrega |
++---------------+----------------+----------------+---------------+
+|            30 |             30 | 2008-09-03     | 2008-08-31    |
+|            36 |             36 | 2008-12-15     | 2008-12-10    |
+|            24 |             24 | 2008-07-31     | 2008-07-25    |
++---------------+----------------+----------------+---------------+
+
+SELECT p.codigo_pedido, c.codigo_cliente, p.fecha_esperada, p.fecha_entrega FROM pedido p JOIN cliente c ON p.codigo_pedido = c.codigo_cliente WHERE fecha_entrega <= ADDDATE(fecha_esperada, INTERVAL -2 DAY);
+
++---------------+----------------+----------------+---------------+
+| codigo_pedido | codigo_cliente | fecha_esperada | fecha_entrega |
++---------------+----------------+----------------+---------------+
+|            30 |             30 | 2008-09-03     | 2008-08-31    |
+|            36 |             36 | 2008-12-15     | 2008-12-10    |
+|            24 |             24 | 2008-07-31     | 2008-07-25    |
++---------------+----------------+----------------+---------------+
+
+
 --CONSULTAS DE 20 A 40--
 
 /* 1. Devuelve el nombre de los clientes que no hayan hecho pagos y el nombre de sus
