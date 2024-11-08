@@ -481,11 +481,10 @@ INNER JOIN area_finanzas a ON r.nombre_area = a.nombre_area;
   | Marta Sanchez       |
   +---------------------+
 
-  -- PIPE --
-
+-- PIPE --
 -- UPDATE --
 
-1. Actualizar el numero de telefono del area financiera Contabilidad a: 49453125
+1. Actualizar el numero de telefono del area financiera Contabilidad a: 49453125.
 UPDATE area_finanzas SET telefono = 49453125 WHERE nombre_area = 'Contabilidad';
 +------------------------+----------+
 | nombre_area            | telefono |
@@ -502,7 +501,7 @@ UPDATE area_finanzas SET telefono = 49453125 WHERE nombre_area = 'Contabilidad';
 | Tesoreria              | 45234567 |
 +------------------------+----------+
 
-2. Actualiza el interno 2023. Ya no circula mas.
+2. Actualiza el interno 2023 ya que no circula mas.
 UPDATE internos SET circula = FALSE WHERE num_interno = 2023 ;
 +-------------+---------------+---------+----------+
 | num_interno | linea_interno | circula | id_infra |
@@ -520,7 +519,7 @@ UPDATE internos SET circula = FALSE WHERE num_interno = 2023 ;
 +-------------+---------------+---------+----------+
 
 --DELETE 
-Eliminar los nombres de las areas financieras que empiecen con Pr.
+1. Eliminar los nombres de las areas financieras que empiecen con Pr.
 DELETE FROM area_finanzas WHERE nombre_area LIKE 'Pr%';
 +------------------------+----------+
 | nombre_area            | telefono |
@@ -534,7 +533,20 @@ DELETE FROM area_finanzas WHERE nombre_area LIKE 'Pr%';
 | Tesoreria              | 45234567 |
 +------------------------+----------+
 
---ON CASCADE
- --Los hago en casa -
+--DELETE ON CASCADE
+1. Elimina las empresas las cuales hayan sido creadas a partir del año 2000, y su telefono empieze con 48.
+DELETE FROM empresas WHERE fecha_creacion >= '2000-01-01' AND telefono_empresa LIKE '48%';
++----------------------------------+------------+----------------+------------------+------------------------+
+| nombre_empresa                   | id_empresa | fecha_creacion | telefono_empresa | area_finanzas          |
++----------------------------------+------------+----------------+------------------+------------------------+
+| 13 de Noviembre S.A.             |          8 | 2019-04-18     |         40123456 | Presupuesto            |
+| Empresa Nueve de Julio S.A.T.    |          4 | 2015-11-05     |         47567890 | Auditoria              |
+| Grupo de Transporte DOTA         |          6 | 2013-08-30     |         42345678 | Cobranza y Recaudacion |
+| Micro Omnibus Quilmes S.A.       |          9 | 2017-09-25     |         47567891 | Proveedores            |
+| Micro Omnibus Tigre S.A.         |          5 | 2011-02-20     |         49678901 | Pagos y Obligaciones   |
+| Transporte La Union S.A.         |          1 | 1995-06-15     |         48123456 | Contabilidad           |
+| Transportes Unidos de Merlo S.A. |          7 | 2016-01-12     |         43789012 | Facturacion            |
+| Union Platense S.R.L.            |          3 | 2010-07-22     |         46123456 | Impuestos              |
++----------------------------------+------------+----------------+------------------+------------------------+
 
 
