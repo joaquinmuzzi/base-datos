@@ -1,5 +1,4 @@
 CREATE DATABASE DV;
-
 USE DV;
 
 CREATE TABLE Distribuidoras (
@@ -15,9 +14,9 @@ CREATE TABLE Distribuidoras (
 CREATE TABLE Clientes (
     dni INT(10) NOT NULL,
     nombre VARCHAR(30) NOT NULL,
+    apellido VARCHAR(30),
     direccion VARCHAR(65),
     telefono INT(10),
-    apellido VARCHAR(30),
     PRIMARY KEY(dni)
 );
 
@@ -27,7 +26,7 @@ CREATE TABLE Generos (
     descripcion VARCHAR(200) NOT NULL,
     PRIMARY KEY(id_genero)
 );
- 
+
 CREATE TABLE Peliculas (
     id_pelicula INT(10) NOT NULL,
     id_genero INT(10) NOT NULL,
@@ -37,6 +36,7 @@ CREATE TABLE Peliculas (
     director VARCHAR(60),
     descripcion VARCHAR(200),
     anio DATE NOT NULL,
+    tarifa INT(10) NOT NULL,
     PRIMARY KEY(id_pelicula),
     FOREIGN KEY(id_genero) REFERENCES Generos(id_genero),
     FOREIGN KEY(id_distrubuidora) REFERENCES Distribuidoras(id_distrubuidora)
@@ -57,7 +57,6 @@ CREATE TABLE Alquileres (
     fecha_inicio DATE NOT NULL,
     fecha_final DATE NOT NULL,
     fecha_devolucion DATE NULL,
-    tarifa INT(10) NOT NULL,
     base INT(10) NOT NULL,
     penalizacion INT(15) NOT NULL,
     importe INT(10) NOT NULL,

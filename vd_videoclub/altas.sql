@@ -1,67 +1,126 @@
-CREATE DATABASE DV;
+INSERT INTO Distribuidoras VALUES
+(1, 'Cinemark Digital', 'www.cinemark.com', 'Av. Rivadavia 5432, CABA', 1134567790, 'contacto@cinemark.com'),
+(2, 'Nova Films', 'www.novafilms.ar', 'Calle 9 de Julio 1023, Rosario', 1123896789, 'info@novafilms.ar'),
+(3, 'Solar Entertainment', 'www.solarent.com', 'Av. Mitre 800, Cordoba', 1132344575, 'solar@entertainment.com'),
+(4, 'Vision Cine', 'www.visioncine.ar', 'San Martin 45, Mendoza', 1124423344, 'ventas@visioncine.ar'),
+(5, 'Atomo Distribucion', 'www.atomo.com', 'Belgrano 1300, La Plata', 1145566128, 'atomo@distribucion.com');
 
-USE DV;
+INSERT INTO Clientes VALUES
+(40123456, 'Lucas', 'Gomez', 'Av. Belgrano 1201, CABA', 1165432123),
+(40234567, 'Martina', 'Ruiz', 'Calle Los Alamos 322, Pilar', 1154321678),
+(40345678, 'Joaquin', 'Perez', 'Mitre 808, Quilmes', 1145678901),
+(40456789, 'Valentina', 'Sosa', 'Av. San Juan 900, CABA', 1176543210),
+(40567890, 'Tomas', 'Fernandez', 'Gral. Paz 1200, Moron', 1134987654),
+(40678901, 'Camila', 'Lopez', 'Sarmiento 1100, Lomas de Zamora', 1155567788),
+(40789012, 'Mateo', 'Martinez', 'Av. Libertador 4500, CABA', 1144332211),
+(40890123, 'Lucia', 'Molina', 'Av. Santa Fe 3400, CABA', 1161122334),
+(40901234, 'Bruno', 'Castro', 'Calle 12 Nº345, La Plata', 1156789900),
+(41012345, 'Sofia', 'Navarro', 'Belgrano 200, Neuquen', 1144221133),
+(41123456, 'Diego', 'Aguilar', 'Av. Jujuy 789, Cordoba', 1155110022),
+(41234567, 'Julieta', 'Ramos', 'Tucuman 1444, Rosario', 1177889900),
+(41345678, 'Agustin', 'Romero', 'Calle Sol 230, Rosario', 1144556678),
+(41456789, 'Carla', 'Suarez', 'Av. Mitre 1200, Mendoza', 1156677889),
+(41567890, 'Esteban', 'Ramirez', 'Calle Nueva 150, CABA', 1167788990),
+(41678901, 'Gabriela', 'Fernandez', 'Av. del Libertador 2345, Cordoba', 1122334455),
+(41789012, 'Hugo', 'Sanchez', 'Calle Falsa 123, La Plata', 1133224455),
+(41890123, 'Isabel', 'Gomez', 'Av. Corrientes 789, CABA', 1144556677),
+(41901234, 'Javier', 'Lopez', 'Calle Uruguay 455, Rosario', 1155667788),
+(42012345, 'Karla', 'Diaz', 'Av. Santa Fe 2000, Cordoba', 1166778899),
+(42123456, 'Leonel', 'Ibarra', 'Av. Callao 1450, CABA', 1167890123),
+(42234567, 'Malena', 'Ortiz', 'Calle Lavalle 321, San Isidro', 1156781234),
+(42345678, 'Ramiro', 'Silva', 'Av. Rivadavia 5000, CABA', 1170011223),
+(42456789, 'Daniela', 'Ponce', 'Calle Salta 100, Salta', 1133445566),
+(42567890, 'Facundo', 'Mendez', 'Av. Alem 230, Bahia Blanca', 1144567788);
 
-CREATE TABLE Distribuidoras (
-    id_distrubuidora INT(10) NOT NULL,
-    nombre VARCHAR(30) NOT NULL,
-    url_distribuidora VARCHAR(20) NOT NULL,
-    direccion VARCHAR(65) NOT NULL,
-    telefono INT(10) NOT NULL,
-    email VARCHAR(50) NOT NULL,
-    PRIMARY KEY(id_distrubuidora)
-);
 
-CREATE TABLE Clientes (
-    dni INT(10) NOT NULL,
-    nombre VARCHAR(30) NOT NULL,
-    direccion VARCHAR(65),
-    telefono INT(10),
-    apellido VARCHAR(30),
-    PRIMARY KEY(dni)
-);
- 
-CREATE TABLE Peliculas (
-    id_pelicula INT(10) NOT NULL,
-    id_genero INT(10) NOT NULL,
-    id_distrubuidora INT(10) NOT NULL,
-    titulo VARCHAR(30) NOT NULL,
-    reparto VARCHAR(200) NOT NULL,
-    director VARCHAR(60),
-    descripcion VARCHAR(200),
-    anio DATE NOT NULL,
-    PRIMARY KEY(id_pelicula),
-    FOREIGN KEY(id_genero) REFERENCES Generos(id_genero),
-    FOREIGN KEY(id_distrubuidora) REFERENCES Distribuidoras(id_distrubuidora)
-);
+INSERT INTO Generos VALUES
+(1, 'Accion', 'Peliculas cargadas de adrenalina, con persecuciones, peleas cuerpo a cuerpo, explosiones y heroes que enfrentan peligros extremos.'),
+(2, 'Comedia', 'Relatos pensados para hacerte reir, con situaciones absurdas, dialogos ingeniosos y personajes que se meten en lios insolitos.'),
+(3, 'Terror', 'Historias oscuras y escalofriantes, con monstruos, espiritus o psicopatas que te van a tener al borde del asiento.'),
+(4, 'Drama', 'Peliculas con fuertes emociones, conflictos humanos intensos y decisiones dificiles que cambian la vida de los personajes.'),
+(5, 'Ciencia Ficcion', 'Exploraciones futuristas, tecnologia avanzada, inteligencias artificiales y mundos alternativos que te hacen volar la cabeza.'),
+(6, 'Documental', 'Narrativas basadas en hechos reales, con analisis sociales, culturales o cientificos.'),
+(7, 'Romance', 'Historias centradas en relaciones amorosas, encuentros, desencuentros y emociones profundas.'),
+(8, 'Animacion', 'Peliculas realizadas con tecnicas de animacion que encantan tanto a chicos como a grandes.'),
+(9, 'Aventura', 'Relatos llenos de exploraciones, desafios epicos y escenarios exoticos.'),
+(10, 'Musical', 'Peliculas donde la musica y el baile forman parte fundamental del relato.'),
+(11, 'Suspenso', 'Historias cargadas de tension, giros inesperados y misterios por resolver.'),
+(12, 'Fantastico', 'Mundos magicos, criaturas sobrenaturales y hechos imposibles cobran vida.');
 
-CREATE TABLE Copias (
-    numero_registro INT(10) NOT NULL,
-    cantidad INT(5) NOT NULL,
-    id_pelicula INT(10) NOT NULL,
-    PRIMARY KEY(numero_registro),
-    FOREIGN KEY(id_pelicula) REFERENCES Peliculas(id_pelicula)
-);
+INSERT INTO Peliculas VALUES
+(1, 1, 2, 'Furia Urbana', 'Martin Piroyansky, Luis Machin', 'Carla Lopez', 'Una historia de venganza en Buenos Aires.', '2022-07-15', 500),
+(2, 2, 1, 'Reite Si Podes', 'Natalie Perez, Luciano Castro', 'Pablo Fabregas', 'Un stand-up hecho pelicula.', '2021-11-20', 500),
+(3, 5, 3, 'Galaxia Alfa', 'Tom Hardy, Eva Green', 'James Cameron', 'Exploracion intergalactica en 2150.', '2023-03-01', 700),
+(4, 4, 5, 'Rio de Lagrimas', 'Mercedes Moran, Leonardo Sbaraglia', 'Lucrecia Martel', 'Drama familiar en el interior del pais.', '2020-10-10', 600),
+(5, 3, 4, 'La Casa del Silencio', 'Sofia Gala, Nahuel Perez Biscayart', 'Damian Szifron', 'Terror psicologico en una casa aislada.', '2022-01-31', 600),
+(6, 6, 1, 'El Fin del Mundo', 'Ricardo Darin, Cecilia Roth', 'Mariano Cohn', 'Documental sobre el cambio climatico.', '2023-06-12', 400),
+(7, 7, 2, 'Amor de Invierno', 'China Suarez, Nicolas Furtado', 'Juan Taratuto', 'Un romance imposible en Bariloche.', '2024-02-14', 550),
+(8, 8, 3, 'La Magia de Sofi', 'Voces de Lali Esposito, Adrian Suar', 'Ana Katz', 'Una nina descubre un mundo animado escondido en su casa.', '2025-04-01', 450),
+(9, 9, 4, 'Expedicion Amazonia', 'Peter Lanzani, Laura Esquivel', 'Nicolas Goldbart', 'Una aventura por la selva con secretos milenarios.', '2023-12-01', 650),
+(10, 10, 5, 'Canta y No Llores', 'Florencia Pena, Benjamin Rojas', 'Marcos Carnevale', 'Una comedia musical. (Estreno clásico)', '2009-09-15', 500),
+(11, 3, 4, 'El Susurro del Bosque', 'Dolores Fonzi, Rodrigo de la Serna', 'Benjamin Naishtat', 'Terror ambiental con tintes sobrenaturales.', '2021-10-31', 600),
+(12, 9, 5, 'Recuerdos del Futuro', 'Chino Darin, Julieta Zylberberg', 'Albertina Carri', 'Un viaje en el tiempo con dilemas existenciales.', '2020-05-20', 650),
+(13, 4, 1, 'El Lado Oscuro del Humor', 'Sebastian Wainraich, Malena Pichot', 'Santiago Korovsky', 'Stand-up con giros oscuros.', '2022-09-17', 500),
+(14, 1, 3, 'Planeta Azul', 'Guillermo Francella, Natalia Oreiro', 'Lucia Puenzo', 'Una odisea en un planeta cubierto de agua.', '2023-08-25', 700),
+(15, 5, 2, 'Destino Final: Avenida 9 de Julio', 'Esteban Lamothe, Violeta Urtizberea', 'Bruno Stagnaro', 'Accion vertiginosa en las calles de Buenos Aires.', '2024-01-10', 550);
 
-CREATE TABLE Generos (
-    id_genero INT(10) NOT NULL,
-    nombre VARCHAR(30) NOT NULL,
-    descripcion VARCHAR(200) NOT NULL,
-    PRIMARY KEY(id_genero)
-);
 
-CREATE TABLE Alquileres (
-    id_alquiler INT(10) NOT NULL,
-    dni INT(10) NOT NULL,
-    numero_registro INT(10) NOT NULL,
-    fecha_inicio DATE NOT NULL,
-    fecha_final DATE NOT NULL,
-    fecha_devolucion DATE NULL,
-    tarifa INT(10) NOT NULL,
-    base INT(10) NOT NULL,
-    penalizacion INT(15) NOT NULL,
-    importe INT(10) NOT NULL,
-    PRIMARY KEY(id_alquiler),
-    FOREIGN KEY(dni) REFERENCES Clientes(dni),
-    FOREIGN KEY(numero_registro) REFERENCES Copias(numero_registro)
-);
+INSERT INTO Copias VALUES
+(1001, 3, 1),
+(1002, 2, 1),
+(1003, 5, 2),
+(1004, 3, 2),
+(1005, 4, 3),
+(1006, 2, 3),
+(1007, 6, 4),
+(1008, 4, 4),
+(1009, 3, 5),
+(1010, 5, 5),
+(1011, 7, 6),
+(1012, 3, 6),
+(1013, 2, 7),
+(1014, 6, 7),
+(1015, 5, 8),
+(1016, 4, 8),
+(1017, 3, 9),
+(1018, 2, 9),
+(1019, 6, 10),
+(1020, 4, 10);
+
+INSERT INTO Alquileres VALUES
+(1, 40123456, 1001, '2025-03-01', '2025-03-05', '2025-03-04', 500, 0, 500),
+(2, 40234567, 1003, '2025-03-02', '2025-03-06', '2025-03-06', 500, 0, 500),
+(3, 40345678, 1005, '2025-03-03', '2025-03-07', '2025-03-07', 700, 0, 700),
+(4, 40456789, 1007, '2025-03-05', '2025-03-10', '2025-03-09', 600, 0, 600),
+(5, 40567890, 1009, '2025-03-06', '2025-03-09', '2025-03-12', 600, 240, 840),
+(6, 40678901, 1011, '2025-03-07', '2025-03-11', '2025-03-10', 400, 0, 400),
+(7, 40789012, 1013, '2025-03-08', '2025-03-13', NULL, 550, 0, 550),
+(8, 40890123, 1015, '2025-03-09', '2025-03-14', '2025-03-14', 450, 0, 450),
+(9, 40901234, 1017, '2025-03-10', '2025-03-15', NULL, 650, 0, 650),
+(10, 41012345, 1019, '2025-03-11', '2025-03-16', '2025-03-12', 500, 0, 500),
+(11, 41123456, 1020, '2025-03-11', '2025-03-16', '2025-03-17', 500, 250, 750),
+(12, 41234567, 1002, '2025-04-01', '2025-04-05', '2025-04-05', 500, 0, 500),
+(13, 41345678, 1004, '2025-04-02', '2025-04-06', NULL, 500, 0, 500),
+(14, 41456789, 1006, '2025-04-03', '2025-04-07', '2025-04-07', 700, 0, 700),
+(15, 41567890, 1008, '2025-04-04', '2025-04-08', NULL, 600, 0, 600),
+(16, 41678901, 1019, '2013-02-01', '2013-02-05', '2013-02-05', 500, 0, 500),
+(17, 41789012, 1012, '2025-02-01', '2025-02-05', '2025-02-06', 400, 80, 480),
+(18, 41890123, 1014, '2025-02-10', '2025-02-15', NULL, 550, 0, 550),
+(19, 41901234, 1016, '2025-02-15', '2025-02-20', '2025-02-20', 450, 0, 450),
+(20, 42012345, 1018, '2025-02-20', '2025-02-25', NULL, 650, 0, 650),
+(21, 40123456, 1001, '2025-03-01', '2025-03-05', '2025-03-04', 500, 2000, 2000),
+(22, 40234567, 1002, '2025-03-02', '2025-03-06', '2025-03-10', 500, 2000, 4000),
+(23, 40345678, 1003, '2025-03-03', '2025-03-07', NULL, 700, 2800, 2800),
+(24, 40456789, 1004, '2025-03-05', '2025-03-10', '2025-03-09', 600, 2400, 2400),
+(25, 40567890, 1005, '2025-03-06', '2025-03-09', '2025-03-12', 600, 2400, 4200),
+(26, 40678901, 1006, '2025-03-07', '2025-03-11', '2025-03-10', 700, 2800, 2800),
+(27, 40789012, 1007, '2025-03-08', '2025-03-13', NULL, 650, 2600, 2600),
+(28, 40890123, 1008, '2025-03-09', '2025-03-14', '2025-03-14', 600, 2400, 2400),
+(29, 40901234, 1009, '2025-03-10', '2025-03-15', NULL, 700, 2800, 2800),
+(30, 41012345, 1010, '2025-03-11', '2025-03-13', '2025-03-12', 650, 1300, 1300),
+(31, 41123456, 1011, '2025-03-11', '2025-03-16', '2025-03-17', 750, 3000, 3750),
+(32, 40456789, 1004, '2020-06-10', '2020-06-15', '2020-06-16', 500, 50, 550),
+(33, 40567890, 1006, '2021-09-05', '2021-09-10', '2021-09-10', 700, 0, 700),
+(34, 40678901, 1007, '2022-12-01', '2022-12-05', '2022-12-07', 600, 100, 700),
+(35, 40789012, 1009, '2023-03-20', '2023-03-25', '2023-03-24', 600, 0, 600),
+(36, 40890123, 1011, '2024-07-12', '2024-07-18', '2024-07-20', 400, 100, 500);
