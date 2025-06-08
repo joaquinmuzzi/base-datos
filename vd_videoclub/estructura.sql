@@ -1,14 +1,14 @@
-CREATE DATABASE DV;
-USE DV;
+CREATE DATABASE VIDEOCLUB;
+USE VIDEOCLUB;
 
 CREATE TABLE Distribuidoras (
-    id_distrubuidora INT(10) NOT NULL,
+    id_distribuidora INT(10) NOT NULL,
     nombre VARCHAR(30) NOT NULL,
     url_distribuidora VARCHAR(20) NOT NULL,
     direccion VARCHAR(65) NOT NULL,
     telefono INT(10) NOT NULL,
     email VARCHAR(50) NOT NULL,
-    PRIMARY KEY(id_distrubuidora)
+    PRIMARY KEY(id_distribuidora)
 );
 
 CREATE TABLE Clientes (
@@ -30,7 +30,7 @@ CREATE TABLE Generos (
 CREATE TABLE Peliculas (
     id_pelicula INT(10) NOT NULL,
     id_genero INT(10) NOT NULL,
-    id_distrubuidora INT(10) NOT NULL,
+    id_distribuidora INT(10) NOT NULL,
     titulo VARCHAR(30) NOT NULL,
     reparto VARCHAR(200) NOT NULL,
     director VARCHAR(60),
@@ -39,12 +39,11 @@ CREATE TABLE Peliculas (
     tarifa INT(10) NOT NULL,
     PRIMARY KEY(id_pelicula),
     FOREIGN KEY(id_genero) REFERENCES Generos(id_genero),
-    FOREIGN KEY(id_distrubuidora) REFERENCES Distribuidoras(id_distrubuidora)
+    FOREIGN KEY(id_distribuidora) REFERENCES Distribuidoras(id_distribuidora)
 );
 
 CREATE TABLE Copias (
     numero_registro INT(10) NOT NULL,
-    cantidad INT(5) NOT NULL,
     id_pelicula INT(10) NOT NULL,
     PRIMARY KEY(numero_registro),
     FOREIGN KEY(id_pelicula) REFERENCES Peliculas(id_pelicula)

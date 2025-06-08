@@ -1,11 +1,11 @@
-INSERT INTO Distribuidoras VALUES
+INSERT INTO Distribuidoras (id_distribuidora, nombre, url_distribuidora, direccion, telefono, email) VALUES
 (1, 'Cinemark Digital', 'www.cinemark.com', 'Av. Rivadavia 5432, CABA', 1134567790, 'contacto@cinemark.com'),
 (2, 'Nova Films', 'www.novafilms.ar', 'Calle 9 de Julio 1023, Rosario', 1123896789, 'info@novafilms.ar'),
 (3, 'Solar Entertainment', 'www.solarent.com', 'Av. Mitre 800, Cordoba', 1132344575, 'solar@entertainment.com'),
 (4, 'Vision Cine', 'www.visioncine.ar', 'San Martin 45, Mendoza', 1124423344, 'ventas@visioncine.ar'),
 (5, 'Atomo Distribucion', 'www.atomo.com', 'Belgrano 1300, La Plata', 1145566128, 'atomo@distribucion.com');
 
-INSERT INTO Clientes VALUES
+INSERT INTO Clientes (dni, nombre, apellido, direccion, telefono) VALUES
 (40123456, 'Lucas', 'Gomez', 'Av. Belgrano 1201, CABA', 1165432123),
 (40234567, 'Martina', 'Ruiz', 'Calle Los Alamos 322, Pilar', 1154321678),
 (40345678, 'Joaquin', 'Perez', 'Mitre 808, Quilmes', 1145678901),
@@ -33,7 +33,7 @@ INSERT INTO Clientes VALUES
 (42567890, 'Facundo', 'Mendez', 'Av. Alem 230, Bahia Blanca', 1144567788);
 
 
-INSERT INTO Generos VALUES
+INSERT INTO Generos (id_genero, nombre, descripcion) VALUES
 (1, 'Accion', 'Peliculas cargadas de adrenalina, con persecuciones, peleas cuerpo a cuerpo, explosiones y heroes que enfrentan peligros extremos.'),
 (2, 'Comedia', 'Relatos pensados para hacerte reir, con situaciones absurdas, dialogos ingeniosos y personajes que se meten en lios insolitos.'),
 (3, 'Terror', 'Historias oscuras y escalofriantes, con monstruos, espiritus o psicopatas que te van a tener al borde del asiento.'),
@@ -47,7 +47,7 @@ INSERT INTO Generos VALUES
 (11, 'Suspenso', 'Historias cargadas de tension, giros inesperados y misterios por resolver.'),
 (12, 'Fantastico', 'Mundos magicos, criaturas sobrenaturales y hechos imposibles cobran vida.');
 
-INSERT INTO Peliculas VALUES
+INSERT INTO Peliculas (id_pelicula, id_genero, id_distribuidora, titulo, reparto, director, descripcion, anio, tarifa) VALUES
 (1, 1, 2, 'Furia Urbana', 'Martin Piroyansky, Luis Machin', 'Carla Lopez', 'Una historia de venganza en Buenos Aires.', '2022-07-15', 500),
 (2, 2, 1, 'Reite Si Podes', 'Natalie Perez, Luciano Castro', 'Pablo Fabregas', 'Un stand-up hecho pelicula.', '2021-11-20', 500),
 (3, 5, 3, 'Galaxia Alfa', 'Tom Hardy, Eva Green', 'James Cameron', 'Exploracion intergalactica en 2150.', '2023-03-01', 700),
@@ -65,29 +65,88 @@ INSERT INTO Peliculas VALUES
 (15, 5, 2, 'Destino Final: Avenida 9 de Julio', 'Esteban Lamothe, Violeta Urtizberea', 'Bruno Stagnaro', 'Accion vertiginosa en las calles de Buenos Aires.', '2024-01-10', 550);
 
 
-INSERT INTO Copias VALUES
-(1001, 3, 1),
-(1002, 2, 1),
-(1003, 5, 2),
-(1004, 3, 2),
-(1005, 4, 3),
-(1006, 2, 3),
-(1007, 6, 4),
-(1008, 4, 4),
-(1009, 3, 5),
-(1010, 5, 5),
-(1011, 7, 6),
-(1012, 3, 6),
-(1013, 2, 7),
-(1014, 6, 7),
-(1015, 5, 8),
-(1016, 4, 8),
-(1017, 3, 9),
-(1018, 2, 9),
-(1019, 6, 10),
-(1020, 4, 10);
+INSERT INTO Copias (numero_registro, id_pelicula) VALUES
+(1001, 1),
+(1002, 1),
+(1003, 1),
+(1004, 1),
+(1005, 1),
+(1006, 2),
+(1007, 2),
+(1008, 2),
+(1009, 2),
+(1010, 2),
+(1011, 2),
+(1012, 2),
+(1013, 2),
+(1014, 3),
+(1015, 3),
+(1016, 3),
+(1017, 3),
+(1018, 3),
+(1019, 3),
+(1020, 4),
+(1021, 4),
+(1022, 4),
+(1023, 4),
+(1024, 4),
+(1025, 4),
+(1026, 4),
+(1027, 4),
+(1028, 4),
+(1029, 4),
+(1030, 5),
+(1031, 5),
+(1032, 5),
+(1033, 5),
+(1034, 5),
+(1035, 5),
+(1036, 5),
+(1037, 5),
+(1038, 6),
+(1039, 6),
+(1040, 6),
+(1041, 6),
+(1042, 6),
+(1043, 6),
+(1044, 6),
+(1045, 6),
+(1046, 6),
+(1047, 6),
+(1048, 7),
+(1049, 7),
+(1050, 7),
+(1051, 7),
+(1052, 7),
+(1053, 7),
+(1054, 7),
+(1055, 7),
+(1056, 8),
+(1057, 8),
+(1058, 8),
+(1059, 8),
+(1060, 8),
+(1061, 8),
+(1062, 8),
+(1063, 8),
+(1064, 8),
+(1065, 9),
+(1066, 9),
+(1067, 9),
+(1068, 9),
+(1069, 9),
+(1070, 10),
+(1071, 10),
+(1072, 10),
+(1073, 10),
+(1074, 10),
+(1075, 10),
+(1076, 10),
+(1077, 10),
+(1078, 10),
+(1079, 12);
 
-INSERT INTO Alquileres VALUES
+INSERT INTO Alquileres (id_alquiler, dni, numero_registro, fecha_inicio, fecha_final, fecha_devolucion, base, penalizacion, importe) VALUES
 (1, 40123456, 1001, '2025-03-01', '2025-03-05', '2025-03-04', 500, 0, 500),
 (2, 40234567, 1003, '2025-03-02', '2025-03-06', '2025-03-06', 500, 0, 500),
 (3, 40345678, 1005, '2025-03-03', '2025-03-07', '2025-03-07', 700, 0, 700),
@@ -123,4 +182,9 @@ INSERT INTO Alquileres VALUES
 (33, 40567890, 1006, '2021-09-05', '2021-09-10', '2021-09-10', 700, 0, 700),
 (34, 40678901, 1007, '2022-12-01', '2022-12-05', '2022-12-07', 600, 100, 700),
 (35, 40789012, 1009, '2023-03-20', '2023-03-25', '2023-03-24', 600, 0, 600),
-(36, 40890123, 1011, '2024-07-12', '2024-07-18', '2024-07-20', 400, 100, 500);
+(36, 40890123, 1011, '2024-07-12', '2024-07-18', '2024-07-20', 400, 100, 500),
+(37, 40123456, 1025, '2024-05-10', '2024-05-15', '2024-05-15', 600, 50, 650),
+(38, 40234567, 1026, '2023-08-20', '2023-08-25', '2023-08-25', 700, 0, 700),
+(39, 40345678, 1027, '2023-07-15', '2023-07-20', '2023-07-20', 550, 0, 550),
+(40, 40456789, 1028, '2024-11-05', '2024-11-10', '2024-11-10', 450, 0, 450),
+(41, 40567890, 1029, '2022-12-01', '2022-12-06', '2022-12-06', 650, 0, 650);
